@@ -12,7 +12,7 @@ class Mysql implements TableDropper
     {
         Schema::disableForeignKeyConstraints();
 
-        collect(DB::select('SHOW TABLES'))
+        collect(DB::select('SHOW FULL TABLES WHERE Table_Type = 'BASE TABLE''))
             ->map(function (stdClass $tableProperties) {
                 return get_object_vars($tableProperties)[key($tableProperties)];
             })
