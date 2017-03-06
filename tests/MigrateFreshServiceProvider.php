@@ -28,8 +28,10 @@ class MigrateFreshServiceProvider extends ServiceProvider
     {
         $this->app->bind('command.migrate:fresh', MigrateFresh::class);
 
-        $this->commands([
+        $this->commands(
+            [
             'command.migrate:fresh',
-        ]);
+            ]
+        );
     }
 }

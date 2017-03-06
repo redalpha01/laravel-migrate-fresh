@@ -23,7 +23,8 @@ abstract class TestCase extends Orchestra
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('database.default', 'mysql');
-        $app['config']->set('database.connections.mysql', [
+        $app['config']->set(
+            'database.connections.mysql', [
             'driver' => 'mysql',
             'host' => 'localhost',
             'database' => 'laravel_migrate_fresh',
@@ -33,7 +34,8 @@ abstract class TestCase extends Orchestra
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'strict' => false,
-        ]);
+            ]
+        );
     }
 
     protected function getPackageProviders($app)
@@ -52,10 +54,12 @@ abstract class TestCase extends Orchestra
 
         $app->useDatabasePath(__DIR__.'/database');
 
-        $app['db']->connection()->getSchemaBuilder()->create('old_table', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-        });
+        $app['db']->connection()->getSchemaBuilder()->create(
+            'old_table', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+            }
+        );
     }
 
     public function dropAllTables()
@@ -63,12 +67,16 @@ abstract class TestCase extends Orchestra
         Schema::disableForeignKeyConstraints();
 
         collect(DB::select('SHOW TABLES'))
-            ->map(function (stdClass $tableProperties) {
-                return get_object_vars($tableProperties)[key($tableProperties)];
-            })
-            ->each(function (string $tableName) {
-                Schema::drop($tableName);
-            });
+            ->map(
+                function (stdClass $tableProperties) {
+                    return get_object_vars($tableProperties)[key($tableProperties)];
+                }
+            )
+            ->each(
+                function (string $tableName) {
+                    Schema::drop($tableName);
+                }
+            );
 
         Schema::enableForeignKeyConstraints();
     }

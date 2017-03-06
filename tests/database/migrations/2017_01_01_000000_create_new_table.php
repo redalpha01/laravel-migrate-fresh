@@ -13,10 +13,12 @@ class CreateNewTable extends Migration
      */
     public function up()
     {
-        Schema::create('new_table', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('text');
-        });
+        Schema::create(
+            'new_table', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('text');
+            }
+        );
     }
 
     /**

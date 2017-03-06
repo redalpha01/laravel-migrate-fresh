@@ -8,6 +8,8 @@
 [![StyleCI](https://styleci.io/repos/78428025/shield?branch=master)](https://styleci.io/repos/78428025)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-migrate-fresh.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-migrate-fresh)
 
+This is a fork of Spatie/Laravel-Migrate-Fresh which adds view dropping support in MySQL.
+
 Laravel has a `migrate:refresh` command to build up the database using migrations. To clear the database it'll first rollback all migrations by using the `down` method in each migration.
 
 But what if you don't use the `down` method inside your projects? The `migrate:refresh` command will fail as the database isn't cleared first.
