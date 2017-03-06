@@ -1,5 +1,5 @@
 {
-    "name": "redalpha01/laravel-migrate-fresh",
+    "name": "spatie/laravel-migrate-fresh",
     "description": "A command to build up the database from scratch",
 	"homepage": "https://github.com/redalpha01/laravel-migrate-fresh",
     "keywords": [
