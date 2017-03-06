@@ -38,7 +38,7 @@ composer require spatie/laravel-migrate-fresh
 
 Then, edit your composer.json file to add the vcs repository and change the package branch:
 
-```json
+```javascript
 "repositiories": [
    {
       "type": "vcs",
@@ -48,6 +48,12 @@ Then, edit your composer.json file to add the vcs repository and change the pack
 "require": {
    "spatie/laravel-migrate-fresh": "dev-master"
 },
+```
+
+Finally update your packages:
+
+```bash
+composer update
 ```
 
 Next add the `Spatie\MigrateFresh\Commands\MigrateFresh` class to your console kernel.
