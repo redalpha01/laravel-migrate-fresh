@@ -1,15 +1,18 @@
 {
-    "name": "spatie/laravel-migrate-fresh",
+    "name": "redalpha01/laravel-migrate-fresh",
     "description": "A command to build up the database from scratch",
+	"homepage": "https://github.com/redalpha01/laravel-migrate-fresh",
     "keywords": [
         "spatie",
         "migrate",
         "fresh",
         "eloquent",
         "database",
-        "laravel-migrate-fresh"
+        "laravel-migrate-fresh",
+		"laravel",
+		"database",
+		"migration"
     ],
-    "homepage": "https://github.com/spatie/laravel-migrate-fresh",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +25,8 @@
     "require": {
         "php": "^7.0",
         "illuminate/console": "^5.3.28",
-        "illuminate/events": "^5.3.28"
+        "illuminate/events": "^5.3.28",
+		"laravel/framework": "5.*"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.7",
